@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adamo-openarm-teleop"
+version = "0.1.0"
+description = "OpenArm CAN teleoperation using Adamo XR control and the deployed mid IK solver"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10"
+dependencies = [
+    "adamo>=1.0.15,<2",
+    "numpy>=2,<3",
+    "placo==0.9.20",
+    "cmeel-urdfdom==4.0.1",
+    "cmeel-tinyxml2==10.0.0",
+]
+
+[project.scripts]
+openarm-teleop = "openarm_vr_teleop.can_vr_teleop_mid:main"
+
+[project.urls]
+Repository = "https://github.com/adamo-tech/adamo-openarm-teleop"
+Issues = "https://github.com/adamo-tech/adamo-openarm-teleop/issues"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["openarm_vr_teleop*"]
+
+[tool.setuptools.package-data]
+openarm_vr_teleop = ["urdf/*.urdf", "meshes/**/*"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["*.so"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,18 @@
+OpenArm teleoperation with Adamo
+
+This distribution includes the OpenArm robot model and mesh assets from
+Enactic's openarm_description project:
+https://github.com/enactic/openarm_description
+Copyright 2025 Enactic, Inc.
+Licensed under the Apache License, Version 2.0.
+
+The robot description is the generated bimanual v10 URDF used by the deployed
+OpenArm controller. Mesh references were changed from deployment-specific
+absolute paths to paths relative to the URDF. The mesh assets are unmodified.
+
+Legacy XR CDR test fixtures originate from the Adamo SDK:
+https://github.com/adamo-tech/adamo
+Licensed under the Apache License, Version 2.0.
+
+Waveshare's libcontrolcanfd.so is a separately installed vendor dependency
+and is not included in this distribution.
